@@ -12,6 +12,8 @@
     "dist:dir": "npm run electron:build && electron-builder --win --dir",
     "dist:portable": "npm run electron:build && electron-builder --win portable",
     "dist:installer": "npm run electron:build && electron-builder --win nsis",
+    "dist:linux": "npm run electron:build && electron-builder --linux tar.gz",
+    "dist:linux:dir": "npm run electron:build && electron-builder --linux --dir",
     "start": "electron ."
   },
   "keywords": [
@@ -53,7 +55,6 @@
     "appId": "com.zlauncher.app",
     "productName": "ZLauncher",
     "copyright": "Copyright © 2026 ZLauncher Team",
-    "electronDist": "node_modules/electron/dist",
     "directories": {
       "output": "release"
     },
@@ -66,6 +67,13 @@
         "portable",
         "nsis"
       ]
+    },
+    "linux": {
+      "target": [
+        "tar.gz"
+      ],
+      "category": "Game",
+      "executableName": "zlauncher"
     },
     "nsis": {
       "oneClick": false,
